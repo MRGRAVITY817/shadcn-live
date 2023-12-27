@@ -14,10 +14,16 @@ defmodule ShadcnLiveWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ShadcnLiveWeb do
+  live_session :default do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live("/", ShadcnLiveWeb.Pages)
+    live("/docs", ShadcnLiveWeb.Pages.Docs)
+    live("/docs/installation", ShadcnLiveWeb.Pages.Docs.Installation)
+    live("/docs/components/accordion", ShadcnLiveWeb.Pages.Docs.Components.Accordion)
+    live("/docs/components/alert", ShadcnLiveWeb.Pages.Docs.Components.Alert)
+    live("/themes", ShadcnLiveWeb.Pages.Themes)
+    live("/examples", ShadcnLiveWeb.Pages.Examples)
   end
 
   # Enable LiveDashboard in development
