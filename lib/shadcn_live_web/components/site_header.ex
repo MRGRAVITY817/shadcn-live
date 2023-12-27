@@ -6,7 +6,7 @@ defmodule ShadcnLiveWeb.SiteHeader do
 
   def site_header(assigns) do
     ~H"""
-    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header class="flex justify-center sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div class="container flex h-14 max-w-screen-2xl items-center">
         <MainNav.main_nav />
         <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
@@ -18,12 +18,6 @@ defmodule ShadcnLiveWeb.SiteHeader do
               <div class="w-9 px-0">
                 <Icons.github class="h-4 w-4" />
                 <span class="sr-only">GitHub</span>
-              </div>
-            </a>
-            <a href="https://github.com/MRGRAVITY817/shadcn-live" target="_blank" rel="noreferrer">
-              <div class="w-9 px-0">
-                <Icons.twitter class="h-3 w-3 fill-current" />
-                <span class="sr-only">Twitter</span>
               </div>
             </a>
           </nav>
