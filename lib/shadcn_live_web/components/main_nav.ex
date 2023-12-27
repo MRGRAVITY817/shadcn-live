@@ -1,6 +1,8 @@
 defmodule ShadcnLiveWeb.MainNav do
   use Phoenix.Component
 
+  attr :route, :atom
+
   def main_nav(assigns) do
     ~H"""
     <div class="mr-4 hidden md:flex">
@@ -11,29 +13,31 @@ defmodule ShadcnLiveWeb.MainNav do
         </span>
       </a>
       <nav class="flex items-center gap-6 text-sm">
-        <a href="/docs" class="transition-colors hover:text-foreground/80 text-foreground/60">
+        <a href="/docs" class={nav_style(@route == :docs)}>
           Docs
         </a>
-        <a
-          href="/docs/components/accordion"
-          class="transition-colors hover:text-foreground/80 text-foreground/60"
-        >
+        <a href="/docs/components/accordion" class={nav_style(@route == :components)}>
           Components
         </a>
-        <a href="/themes" class="transition-colors hover:text-foreground/80 text-foreground/60">
+        <a href="/themes" class={nav_style(@route == :themes)}>
           Themes
         </a>
-        <a href="/examples" class="transition-colors hover:text-foreground/80 text-foreground/60">
+        <a href="/examples" class={nav_style(@route == :examples)}>
           Examples
         </a>
-        <a
-          href="https://github.com/MRGRAVITY817/shadcn-live"
-          class="transition-colors hover:text-foreground/80 text-foreground/60"
-        >
+        <a href="https://github.com/MRGRAVITY817/shadcn-live" class={nav_style(@route == :github)}>
           GitHub
         </a>
       </nav>
     </div>
     """
+  end
+
+  defp nav_style(is_selected) do
+    if is_selected do
+      "transition-colors text-slate-900"
+    else
+      "transition-colors hover:text-slate-900 text-slate-500"
+    end
   end
 end
