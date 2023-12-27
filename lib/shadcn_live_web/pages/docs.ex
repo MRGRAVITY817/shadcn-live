@@ -6,7 +6,7 @@ defmodule ShadcnLiveWeb.Pages.Docs do
 
   def render(assigns) do
     ~H"""
-    <Page.page route={:docs}>
+    <Page.page route={:docs} current_path={@current_uri.path}>
       <h1>Documentation main</h1>
     </Page.page>
     """

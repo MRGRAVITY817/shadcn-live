@@ -6,7 +6,7 @@ defmodule ShadcnLiveWeb.Pages.Examples do
 
   def render(assigns) do
     ~H"""
-    <Page.page route={:examples}>
+    <Page.page route={:examples} current_path={@current_uri.path}>
       <h1>Themes</h1>
     </Page.page>
     """

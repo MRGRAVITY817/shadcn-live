@@ -14,7 +14,7 @@ defmodule ShadcnLiveWeb.Router do
     plug :accepts, ["json"]
   end
 
-  live_session :default do
+  live_session :default, on_mount: [{ShadcnLiveWeb.SaveRequestUri, :save_request_uri}] do
     pipe_through :browser
 
     live("/", ShadcnLiveWeb.Pages)

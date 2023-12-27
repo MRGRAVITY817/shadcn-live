@@ -4,8 +4,8 @@ defmodule ShadcnLiveWeb.Pages.Docs.Components.Accordion do
 
   def render(assigns) do
     ~H"""
-    <Page.page route={:components}>
-      <h1>Accordion</h1>
+    <Page.page route={:components} current_path={@current_uri.path}>
+      <h1 class="font-black text-4xl">Accordion</h1>
     </Page.page>
     """
   end
