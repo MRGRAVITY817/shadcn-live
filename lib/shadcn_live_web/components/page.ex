@@ -10,7 +10,7 @@ defmodule ShadcnLiveWeb.Page do
   def page(assigns) do
     ~H"""
     <SiteHeader.site_header route={@route} />
-    <main class="px-4 sm:px-6 lg:px-8">
+    <main class="px-4 sm:px-6 lg:px-8 xl:px-16">
       <div class="mx-auto max-w-screen-2xl flex justify-start items-start">
         <%= if @route == :docs or @route == :components do %>
           <DocsSidebarNav.docs_sidebar_nav current_path={@current_path} />
