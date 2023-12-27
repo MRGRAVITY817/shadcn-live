@@ -22,6 +22,7 @@ defmodule ShadcnLiveWeb.Router do
     live("/docs/installation", ShadcnLiveWeb.Pages.Docs.Installation)
     live("/docs/components/accordion", ShadcnLiveWeb.Pages.Docs.Components.Accordion)
     live("/docs/components/alert", ShadcnLiveWeb.Pages.Docs.Components.Alert)
+    live("/docs/components/button", ShadcnLiveWeb.Pages.Docs.Components.Button)
     live("/themes", ShadcnLiveWeb.Pages.Themes)
     live("/examples", ShadcnLiveWeb.Pages.Examples)
   end

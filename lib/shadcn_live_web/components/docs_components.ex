@@ -1,4 +1,4 @@
-defmodule ShadcnLiveWeb.DocsSidebarNav do
+defmodule ShadcnLiveWeb.DocsComponents do
   use Phoenix.Component
 
   @paths %{
@@ -381,6 +381,28 @@ defmodule ShadcnLiveWeb.DocsSidebarNav do
     <a href={@href} class={@style}>
       <%= @title %>
     </a>
+    """
+  end
+
+  attr :current_path, :string, required: true
+
+  def docs_breadcrumb(assigns) do
+    [current_section | _] = assigns.current_path |> String.split("/") |> Enum.reverse()
+
+    assigns = assign(assigns, :current_section, current_section |> String.capitalize())
+
+    ~H"""
+    <div class="text-sm font-light text-gray-500 flex items-center justify-start gap-2">
+      <p>
+        Docs
+      </p>
+      <p>
+        >
+      </p>
+      <span class="text-gray-900 font-normal">
+        <%= @current_section %>
+      </span>
+    </div>
     """
   end
 end

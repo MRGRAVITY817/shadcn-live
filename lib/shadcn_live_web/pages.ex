@@ -7,7 +7,7 @@ defmodule ShadcnLiveWeb.Pages do
   def render(assigns) do
     ~H"""
     <Page.page route={:main} current_path={@current_uri.path}>
-      <div>
+      <div class="mt-20 pl-8">
         <h1 class="font-extrabold text-6xl">
           Your favorite UI library,<br /> now on
           <span class="text-indigo-500">Phoenix LiveView.</span>

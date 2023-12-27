@@ -1,5 +1,5 @@
 defmodule ShadcnLiveWeb.Page do
-  alias ShadcnLiveWeb.DocsSidebarNav
+  alias ShadcnLiveWeb.DocsComponents
   alias ShadcnLiveWeb.SiteHeader
   use Phoenix.Component
 
@@ -13,9 +13,14 @@ defmodule ShadcnLiveWeb.Page do
     <main class="px-4 sm:px-6 lg:px-8 xl:px-16">
       <div class="mx-auto max-w-screen-2xl flex justify-start items-start">
         <%= if @route == :docs or @route == :components do %>
-          <DocsSidebarNav.docs_sidebar_nav current_path={@current_path} />
+          <DocsComponents.docs_sidebar_nav current_path={@current_path} />
         <% end %>
         <div class="py-8">
+          <%= if @route == :docs or @route == :components do %>
+            <div class="mb-8">
+              <DocsComponents.docs_breadcrumb current_path={@current_path} />
+            </div>
+          <% end %>
           <%= render_slot(@inner_block) %>
         </div>
       </div>
